@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    /* Font type and color */
+    --main-font:"VT323", monospace;
+    --main-font-color:hsl(0deg 0% 100%);
+
+    /* user styling */
+    --user-color:#9d6060;
+
+    /* Chat styling */
+    --chat-background: hsl(0deg 0% 0% / 70%);
+
+    /* message styling*/
+    --message-color: #9d6060;
+}
+
+
+#chat li:last-of-type {
+    animation-duration: 0.20s;
+    animation-timing-function: ease-in;
+    animation: bounce-in 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+    transform-origin: center;
+}
+
+@keyframes bounce-in {
+
+0% {
+    transform: scale(0.1);
+    opacity: 0;
+}
+
+    100% {
+    transform: scale(1);
+    opacity: 1;
+}
+
+}
+
+.message {
+
+    word-wrap: break-word;
+
+}
+
+.user {
+
+    font-size: 18px;
+    margin-right: 5px;
+    border: 20px;
+    display: block;
+    height: 18px;
+    width: 100%;
+    padding-left: 0px;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color:var(--user-color);
+}
+
+html,body {
+
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    color: var(--main-font-color);
+    }
+
+#chat {
+
+    width: 400px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+
+#chat::-webkit-scrollbar {
+
+    display: none;
+}
+
+#chat ul {
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style-position: outside;
+}
+
+#chat li {
+    border-radius: 10px;
+    border: solid;
+    border-top-width: 10px;
+    border-right-width: 15px;
+    border-left-width: 15px;
+    border-bottom-width: 15px;
+    border-image: url(./assets/chatforcode.png) 30 stretch;
+    list-style-type: none;
+    background-color: var(--chat-background);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+}
+
+#chat blockquote {
+    font-size: 1.2rem;
+}
+
+/* #chat li:not(:last-of-type) {
+    opacity: 0.5;
+
+} */
+
+#chat li:nth-last-child(2) {
+    opacity: 0.8;
+}
+
+#chat li:nth-last-child(3) {
+    opacity: 0.5;
+}
+
+#chat li:nth-last-child(4) {
+    opacity: 0.2;
+}
+
+.message {
+    word-wrap: break-word;
+    color: var(--message-color);
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.message.user-join {
+    font-weight: bold;
+}
+
+.containerMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
